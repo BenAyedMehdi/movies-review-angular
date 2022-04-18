@@ -1,3 +1,5 @@
-mat-card {
+.card {
     margin-bottom: 16px;
+    padding: 16px;
+    height: 100%;
 }
