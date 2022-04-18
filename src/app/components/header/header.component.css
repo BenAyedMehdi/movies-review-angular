@@ -1,3 +1,10 @@
 button{
     margin: 10px;
 }
+mat-toolbar {
+    justify-content: space-between;
+}
+.column-label {
+    margin-right: 8px;
+    font-size: 1rem;
+}
