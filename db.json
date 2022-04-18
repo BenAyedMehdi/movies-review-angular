@@ -156,19 +156,6 @@
         "editing": 1,
         "visualEffects": 2
       }
-    },
-    {
-      "name": "Movie",
-      "year": "",
-      "director": "",
-      "stars": "",
-      "writers": "",
-      "imgUrl": "",
-      "review": "Good",
-      "ratings": {
-        "directing": 5
-      },
-      "id": 13
     }
   ]
 }
