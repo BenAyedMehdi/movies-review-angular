@@ -1,6 +1,11 @@
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" *ngFor="let movie of movies">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let movie of movies"
+    >
       <app-movie [movie]="movie"></app-movie>
     </div>
   </div>
