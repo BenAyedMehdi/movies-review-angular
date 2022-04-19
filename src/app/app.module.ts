@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
+import { AddMovieComponent } from './components/add-movie/add-movie.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ViewMovieComponent } from './components/view-movie/view-movie.component
     MoviesComponent,
     MovieComponent,
     ViewMovieComponent,
+    AddMovieComponent,
   ],
   imports: [
     BrowserModule,
