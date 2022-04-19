@@ -18,17 +18,9 @@
           <mat-expansion-panel-header>
             <p><strong>Overall score: </strong> {{ avg.toFixed(1) }}/5</p>
           </mat-expansion-panel-header>
-          <p><strong>Directing: </strong> {{ movie.ratings.directing }}/5</p>
-          <p><strong>Acting: </strong> {{ movie.ratings.acting }}/5</p>
-          <p>
-            <strong>CostumeDesign: </strong> {{ movie.ratings.costumeDesign }}/5
+          <p *ngFor="let rate of rates">
+            <strong>{{ rate[0] }}: </strong>{{ rate[1] }}/5
           </p>
-          <p><strong>Editing: </strong> {{ movie.ratings.editing }}/5</p>
-          <p><strong>Music: </strong> {{ movie.ratings.music }}/5</p>
-          <p>
-            <strong>VisualEffects: </strong> {{ movie.ratings.visualEffects }}/5
-          </p>
-          <p><strong>Screenplay: </strong> {{ movie.ratings.screenplay }}/5</p>
         </mat-expansion-panel>
 
         <hr />
