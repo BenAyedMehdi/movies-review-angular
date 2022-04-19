@@ -17,9 +17,7 @@ export class MovieComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(ViewMovieComponent, {
-      data: {
-        animal: 'panda',
-      },
+      data: this.movie,
     });
   }
 }
