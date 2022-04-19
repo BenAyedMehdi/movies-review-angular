@@ -11,4 +11,14 @@ export class ViewMovieComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public movie: Movie) {}
 
   ngOnInit(): void {}
+
+  rates = Object.keys(this.movie.ratings).map((key) => {
+    let a: Record<string, number> = this.movie.ratings;
+    return [key, a[key]];
+  });
+
+  avg =
+    this.rates.reduce((prev, cur) => {
+      return prev + Number(cur[1]);
+    }, 0) / this.rates.length;
 }

@@ -14,19 +14,24 @@
         <p><strong>Stars: </strong> {{ movie.stars }}</p>
         <p><strong>Writers: </strong> {{ movie.writers }}</p>
         <p><strong>Review: </strong> {{ movie.review }}</p>
-        <hr />
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <p><strong>Overall score: </strong> {{ avg.toFixed(1) }}/5</p>
+          </mat-expansion-panel-header>
+          <p><strong>Directing: </strong> {{ movie.ratings.directing }}/5</p>
+          <p><strong>Acting: </strong> {{ movie.ratings.acting }}/5</p>
+          <p>
+            <strong>CostumeDesign: </strong> {{ movie.ratings.costumeDesign }}/5
+          </p>
+          <p><strong>Editing: </strong> {{ movie.ratings.editing }}/5</p>
+          <p><strong>Music: </strong> {{ movie.ratings.music }}/5</p>
+          <p>
+            <strong>VisualEffects: </strong> {{ movie.ratings.visualEffects }}/5
+          </p>
+          <p><strong>Screenplay: </strong> {{ movie.ratings.screenplay }}/5</p>
+        </mat-expansion-panel>
 
-        <p><strong>Directing: </strong> {{ movie.ratings.directing }}</p>
-        <p><strong>Acting: </strong> {{ movie.ratings.acting }}</p>
-        <p>
-          <strong>CostumeDesign: </strong> {{ movie.ratings.costumeDesign }}
-        </p>
-        <p><strong>Editing: </strong> {{ movie.ratings.editing }}</p>
-        <p><strong>Music: </strong> {{ movie.ratings.music }}</p>
-        <p>
-          <strong>VisualEffects: </strong> {{ movie.ratings.visualEffects }}
-        </p>
-        <p><strong>Screenplay: </strong> {{ movie.ratings.screenplay }}</p>
+        <hr />
       </mat-card-content>
     </mat-card>
   </div>
