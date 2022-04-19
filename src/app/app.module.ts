@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatSliderModule } from '@angular/material/slider';
 
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
+import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { MovieComponent } from './components/movie/movie.component';
     HeaderComponent,
     MoviesComponent,
     MovieComponent,
+    ViewMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { MovieComponent } from './components/movie/movie.component';
     MatCardModule,
     MatSliderModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
