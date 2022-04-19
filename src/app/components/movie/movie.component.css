@@ -2,4 +2,6 @@
     margin-bottom: 16px;
     padding: 16px;
     height: 100%;
+    cursor: pointer;
+    overflow-y: auto;
 }

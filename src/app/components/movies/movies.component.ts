@@ -10,7 +10,7 @@ import { Movie } from 'src/app/Movie';
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
 
-  gridColumns = 6;
+  gridColumns = 4;
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {

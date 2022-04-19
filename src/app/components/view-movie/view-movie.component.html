@@ -1,1 +1,36 @@
-<p>{{ data.name }}</p>
+<mat-dialog-content>
+  <div class="card">
+    <mat-card class="mat-elevation-z4">
+      <mat-card-header>
+        <mat-card-title>
+          <div class="image">
+            <img mat-card-image height="200px" src="{{ movie.imgUrl }}" />
+          </div>
+          {{ movie.name }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Director: </strong> {{ movie.director }}</p>
+        <p><strong>Stars: </strong> {{ movie.stars }}</p>
+        <p><strong>Writers: </strong> {{ movie.writers }}</p>
+        <p><strong>Review: </strong> {{ movie.review }}</p>
+        <hr />
+
+        <p><strong>Directing: </strong> {{ movie.ratings.directing }}</p>
+        <p><strong>Acting: </strong> {{ movie.ratings.acting }}</p>
+        <p>
+          <strong>CostumeDesign: </strong> {{ movie.ratings.costumeDesign }}
+        </p>
+        <p><strong>Editing: </strong> {{ movie.ratings.editing }}</p>
+        <p><strong>Music: </strong> {{ movie.ratings.music }}</p>
+        <p>
+          <strong>VisualEffects: </strong> {{ movie.ratings.visualEffects }}
+        </p>
+        <p><strong>Screenplay: </strong> {{ movie.ratings.screenplay }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button color="primary">VIEW</button>
+</mat-dialog-actions>

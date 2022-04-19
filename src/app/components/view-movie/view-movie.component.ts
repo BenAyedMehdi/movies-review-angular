@@ -8,7 +8,7 @@ import { Movie } from 'src/app/Movie';
   styleUrls: ['./view-movie.component.css'],
 })
 export class ViewMovieComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Movie) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public movie: Movie) {}
 
   ngOnInit(): void {}
 }

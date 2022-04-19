@@ -7,5 +7,13 @@ export interface Movie {
   writers: string;
   imgUrl: string;
   review: string;
-  ratings: any[];
+  ratings: {
+    directing: number;
+    acting: number;
+    costumeDesign: number;
+    editing: number;
+    music: number;
+    visualEffects: number;
+    screenplay: number;
+  };
 }
