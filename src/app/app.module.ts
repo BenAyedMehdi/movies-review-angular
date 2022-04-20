@@ -10,6 +10,9 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { MatSliderModule } from '@angular/material/slider';
 
@@ -42,6 +45,9 @@ import { AddMovieComponent } from './components/add-movie/add-movie.component';
     FormsModule,
     MatDialogModule,
     MatExpansionModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

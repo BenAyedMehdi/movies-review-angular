@@ -1,6 +1,82 @@
 <title mat-dialog-title>Add movie</title>
 
-<mat-dialog-content> </mat-dialog-content>
+<mat-dialog-content width="100%">
+  <form>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile>
+        <div class="controls-container">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="title"
+              [(ngModel)]="title"
+              placeholder="title"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="director"
+              [(ngModel)]="director"
+              placeholder="director"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="writers"
+              [(ngModel)]="writers"
+              placeholder="writers"
+            />
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="controls-container">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="year"
+              [(ngModel)]="year"
+              placeholder="year"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="stars"
+              [(ngModel)]="stars"
+              placeholder="stars"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              name="imgUrl"
+              [(ngModel)]="imgUrl"
+              placeholder="imgUrl"
+            />
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <input
+      matInput
+      type="text"
+      name="review"
+      [(ngModel)]="review"
+      placeholder="review"
+    />
+    <hr />
+    <h3>Ratings</h3>
+  </form>
+</mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close color="primary">Close</button>

@@ -13,6 +13,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   openDialog() {
-    this.dialog.open(AddMovieComponent);
+    this.dialog.open(AddMovieComponent, {
+      height: '70%',
+      width: '80%',
+    });
   }
 }
