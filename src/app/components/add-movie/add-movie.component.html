@@ -66,14 +66,16 @@
         </div>
       </mat-grid-tile>
     </mat-grid-list>
-    <input
-      matInput
-      type="text"
-      name="review"
-      [(ngModel)]="review"
-      placeholder="review"
-    />
-    <hr />
+    <mat-form-field>
+      <input
+        class="review"
+        matInput
+        type="text"
+        name="review"
+        [(ngModel)]="review"
+        placeholder="review"
+      />
+    </mat-form-field>
     <h3>Ratings</h3>
     <div *ngFor="let type of ratingTypes">
       <app-rating [name]="type"></app-rating>

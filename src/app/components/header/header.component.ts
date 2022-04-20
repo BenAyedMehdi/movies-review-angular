@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(AddMovieComponent, {
-      height: '70%',
+      height: '95%',
       width: '80%',
     });
   }
