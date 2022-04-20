@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from '../Movie';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,5 +19,9 @@ export class MoviesService {
 
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.apiUrl);
+  }
+
+  addMovie(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(this.apiUrl, movie, httpOptions);
   }
 }

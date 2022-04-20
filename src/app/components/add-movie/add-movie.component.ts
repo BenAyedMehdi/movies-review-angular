@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/Movie';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -28,7 +29,7 @@ export class AddMovieComponent implements OnInit {
   stars: string = '';
   imgUrl: string = '';
   review: string = '';
-  constructor() {}
+  constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {}
   getChange(value: any, type: string) {
@@ -38,14 +39,11 @@ export class AddMovieComponent implements OnInit {
     this.ratings[i].value = value;
   }
   onSubmit() {
-    console.log(this.ratings);
+    //To improve
     const x = this.ratings.map((e) => {
-      //console.log(`{"${e.type}": ${e.value}}`);
       return JSON.parse(`{"${e.type}": ${e.value}}`);
     });
-    console.log(x);
     const y = Object.assign({}, ...x);
-    console.log(y);
     this.movie = {
       id: 0,
       name: this.title,
@@ -58,5 +56,6 @@ export class AddMovieComponent implements OnInit {
       ratings: y,
     };
     console.log(this.movie);
+    this.moviesService.addMovie(this.movie).subscribe();
   }
 }
