@@ -2,7 +2,11 @@
   <mat-grid-tile>
     <label>{{ name }}</label>
   </mat-grid-tile>
-  <mat-radio-group aria-label="rating name">
+  <mat-radio-group
+    (change)="radioChange(choice)"
+    [(ngModel)]="choice"
+    aria-label="rating name"
+  >
     <mat-grid-tile *ngFor="let i of [1, 2, 3, 4, 5]">
       <mat-radio-button [value]="i">{{ i }}</mat-radio-button>
     </mat-grid-tile>

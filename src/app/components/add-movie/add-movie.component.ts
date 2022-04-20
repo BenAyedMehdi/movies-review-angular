@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-movie.component.css'],
 })
 export class AddMovieComponent implements OnInit {
+  choice!: number;
   ratingTypes: string[] = [
     'directing',
     'acting',
@@ -15,6 +16,9 @@ export class AddMovieComponent implements OnInit {
     'visualEffects',
     'screenplay',
   ];
+  ratings = this.ratingTypes.map((type) => {
+    return { type: type, value: 0 };
+  });
   title: string = '';
   director: string = '';
   writers: string = '';
@@ -25,4 +29,9 @@ export class AddMovieComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  getChange(value: any, i: number) {
+    console.log(i);
+    this.ratings[i - 1].value = value;
+    console.log(this.ratings);
+  }
 }

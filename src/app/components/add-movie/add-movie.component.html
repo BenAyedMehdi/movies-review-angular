@@ -77,8 +77,11 @@
       />
     </mat-form-field>
     <h3>Ratings</h3>
-    <div *ngFor="let type of ratingTypes">
-      <app-rating [name]="type"></app-rating>
+    <div *ngFor="let i of [1, 2, 3, 4, 5, 6, 7]">
+      <app-rating
+        (newItemEvent)="getChange($event, i)"
+        [name]="ratingTypes[i]"
+      ></app-rating>
     </div>
   </form>
 </mat-dialog-content>
