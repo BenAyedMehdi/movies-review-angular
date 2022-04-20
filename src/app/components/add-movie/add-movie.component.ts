@@ -29,9 +29,10 @@ export class AddMovieComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  getChange(value: any, i: number) {
-    console.log(i);
-    this.ratings[i - 1].value = value;
-    console.log(this.ratings);
+  getChange(value: any, type: string) {
+    const i = this.ratings.indexOf(
+      this.ratings.filter((e) => e.type === type)[0]
+    );
+    this.ratings[i].value = value;
   }
 }
