@@ -1,6 +1,10 @@
-<label>rating type</label>
-<mat-radio-group aria-label="rating name">
-  <mat-radio-button *ngFor="let i of [1, 2, 3, 4, 5]" [value]="i">{{
-    i
-  }}</mat-radio-button>
-</mat-radio-group>
+<mat-grid-list cols="6" rowHeight="40px">
+  <mat-grid-tile>
+    <label>{{ name }}</label>
+  </mat-grid-tile>
+  <mat-radio-group aria-label="rating name">
+    <mat-grid-tile *ngFor="let i of [1, 2, 3, 4, 5]">
+      <mat-radio-button [value]="i">{{ i }}</mat-radio-button>
+    </mat-grid-tile>
+  </mat-radio-group>
+</mat-grid-list>

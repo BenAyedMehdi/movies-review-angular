@@ -75,7 +75,9 @@
     />
     <hr />
     <h3>Ratings</h3>
-    <app-rating></app-rating>
+    <div *ngFor="let type of ratingTypes">
+      <app-rating [name]="type"></app-rating>
+    </div>
   </form>
 </mat-dialog-content>
 

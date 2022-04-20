@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-movie.component.css'],
 })
 export class AddMovieComponent implements OnInit {
+  ratingTypes: string[] = [
+    'directing',
+    'acting',
+    'costumeDesign',
+    'editing',
+    'music',
+    'visualEffects',
+    'screenplay',
+  ];
   title: string = '';
   director: string = '';
   writers: string = '';
