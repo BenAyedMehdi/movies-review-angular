@@ -21,6 +21,6 @@ export class AppComponent implements OnInit {
         .addMovie(newMovie)
         .subscribe((m) => this.movies.push(newMovie));
     }
-    console.log('movie in app', this.movies);
+    this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
 }

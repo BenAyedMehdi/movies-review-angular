@@ -53,7 +53,6 @@ export class AddMovieComponent implements OnInit {
     });
     const y = Object.assign({}, ...x);
     this.movie = {
-      id: 0,
       name: this.title,
       year: this.year,
       director: this.director,
