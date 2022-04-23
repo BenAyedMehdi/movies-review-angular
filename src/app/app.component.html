@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-movies></app-movies>
+<app-header (newMovieEvent)="getNew($event)"></app-header>
+<app-movies [movies]="movies"></app-movies>

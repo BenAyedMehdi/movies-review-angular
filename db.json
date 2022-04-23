@@ -164,6 +164,25 @@
         "editing": 1,
         "visualEffects": 2
       }
+    },
+    {
+      "id": 13,
+      "name": "Tarazan",
+      "year": "1999",
+      "director": "Jungle",
+      "stars": "tarazan, jane",
+      "writers": "Monkeys",
+      "imgUrl": "https://lumiere-a.akamaihd.net/v1/images/p_tarzan_19875_de73a443.jpeg",
+      "review": "Love it!!!",
+      "ratings": {
+        "directing": 5,
+        "acting": 5,
+        "costumeDesign": 5,
+        "editing": 5,
+        "music": 5,
+        "visualEffects": 5,
+        "screenplay": 5
+      }
     }
   ]
 }

@@ -24,7 +24,6 @@ import { ViewMovieComponent } from './components/view-movie/view-movie.component
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { RatingComponent } from './components/add-movie/rating/rating.component';
 
-import { StorageMoviesService } from './services/storage-movies.service';
 import { MoviesService } from './services/movies.service';
 
 @NgModule({
@@ -55,7 +54,7 @@ import { MoviesService } from './services/movies.service';
     MatInputModule,
     MatRadioModule,
   ],
-  providers: [MoviesService, StorageMoviesService],
+  providers: [MoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

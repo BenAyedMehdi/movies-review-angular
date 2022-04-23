@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Movie } from 'src/app/Movie';
 import { MoviesService } from 'src/app/services/movies.service';
 
@@ -8,6 +9,8 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./add-movie.component.css'],
 })
 export class AddMovieComponent implements OnInit {
+  @Output() onAddMovie: EventEmitter<Movie> = new EventEmitter();
+
   movie!: Movie;
   choice!: number;
   ratingTypes: string[] = [
@@ -29,8 +32,13 @@ export class AddMovieComponent implements OnInit {
   stars: string = '';
   imgUrl: string = '';
   review: string = '';
-  constructor(private moviesService: MoviesService) {}
-
+  constructor(
+    public dialogRef: MatDialogRef<AddMovieComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Movie
+  ) {}
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
   ngOnInit(): void {}
   getChange(value: any, type: string) {
     const i = this.ratings.indexOf(
@@ -38,7 +46,7 @@ export class AddMovieComponent implements OnInit {
     );
     this.ratings[i].value = value;
   }
-  onSubmit() {
+  onSubmit(): Movie {
     //To improve
     const x = this.ratings.map((e) => {
       return JSON.parse(`{"${e.type}": ${e.value}}`);
@@ -55,7 +63,6 @@ export class AddMovieComponent implements OnInit {
       review: this.review,
       ratings: y,
     };
-    console.log(this.movie);
-    this.moviesService.addMovie(this.movie).subscribe();
+    return this.movie;
   }
 }
