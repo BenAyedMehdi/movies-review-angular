@@ -34,7 +34,7 @@ export class MoviesService {
       console.log(m);
       y = [...m];
     });
-    console.log('y');
+    console.log(movie);
     console.log(y);
     y.push(movie);
     console.log(y);

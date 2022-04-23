@@ -14,7 +14,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-
 import { MatSliderModule } from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
@@ -24,6 +23,9 @@ import { MovieComponent } from './components/movie/movie.component';
 import { ViewMovieComponent } from './components/view-movie/view-movie.component';
 import { AddMovieComponent } from './components/add-movie/add-movie.component';
 import { RatingComponent } from './components/add-movie/rating/rating.component';
+
+import { StorageMoviesService } from './services/storage-movies.service';
+import { MoviesService } from './services/movies.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,7 @@ import { RatingComponent } from './components/add-movie/rating/rating.component'
     MatInputModule,
     MatRadioModule,
   ],
-  providers: [],
+  providers: [MoviesService, StorageMoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
