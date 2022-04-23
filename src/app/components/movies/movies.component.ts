@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from 'src/app/services/movies.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/Movie';
 
 @Component({
@@ -8,12 +7,9 @@ import { Movie } from 'src/app/Movie';
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent implements OnInit {
-  movies: Movie[] = [];
-
+  @Input() movies!: Movie[];
   gridColumns = 4;
-  constructor(private moviesService: MoviesService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.moviesService.getMovies().subscribe((m) => (this.movies = m));
-  }
+  ngOnInit(): void {}
 }
