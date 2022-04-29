@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Movie } from 'src/app/Movie';
 import { MatDialog } from '@angular/material/dialog';
 import { ViewMovieComponent } from '../view-movie/view-movie.component';
@@ -10,14 +10,21 @@ import { ViewMovieComponent } from '../view-movie/view-movie.component';
 })
 export class MovieComponent implements OnInit {
   @Input() movie!: Movie;
-
+  @Output() deleteMovieEvent = new EventEmitter<Movie>();
+  movieToDelete!: Movie;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
   openDialog() {
-    this.dialog.open(ViewMovieComponent, {
+    const dialogRef = this.dialog.open(ViewMovieComponent, {
       data: this.movie,
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.movieToDelete = result;
+      //console.log('dialog closed ', this.movieToDelete);
+      this.deleteMovieEvent.emit(this.movie);
     });
   }
 }

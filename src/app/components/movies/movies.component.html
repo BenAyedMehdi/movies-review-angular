@@ -12,7 +12,10 @@
       fxFlex.sm="33%"
       *ngFor="let movie of movies"
     >
-      <app-movie [movie]="movie"></app-movie>
+      <app-movie
+        (deleteMovieEvent)="delete($event)"
+        [movie]="movie"
+      ></app-movie>
     </div>
   </div>
 </div>

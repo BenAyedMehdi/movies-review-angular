@@ -23,5 +23,18 @@ export class AppComponent implements OnInit {
     }
     this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
+<<<<<<< HEAD
   //TOMORROW: work on delete inshalah
+=======
+
+  delete(movie: any) {
+    if (movie) {
+      this.moviesService
+        .deleteMovie(movie)
+        .subscribe(
+          () => (this.movies = this.movies.filter((m) => m.id !== movie.id))
+        );
+    }
+  }
+>>>>>>> delete
 }
