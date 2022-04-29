@@ -12,6 +12,10 @@ export class ViewMovieComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onDelete(movie: Movie) {
+    console.log(movie);
+  }
+
   rates = Object.keys(this.movie.ratings).map((key) => {
     let a: Record<string, number> = this.movie.ratings;
     return [key, a[key]];
