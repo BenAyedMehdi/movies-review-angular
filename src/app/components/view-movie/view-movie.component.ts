@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Movie } from 'src/app/Movie';
+import { MovieComponent } from '../movie/movie.component';
 
 @Component({
   selector: 'app-view-movie',
@@ -8,12 +9,19 @@ import { Movie } from 'src/app/Movie';
   styleUrls: ['./view-movie.component.css'],
 })
 export class ViewMovieComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public movie: Movie) {}
+  constructor(
+    public dialogRef: MatDialogRef<MovieComponent>,
+    @Inject(MAT_DIALOG_DATA) public movie: Movie
+  ) {}
 
   ngOnInit(): void {}
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
   onDelete(movie: Movie) {
-    console.log(movie);
+    return movie;
   }
 
   rates = Object.keys(this.movie.ratings).map((key) => {

@@ -9,7 +9,7 @@ import { MoviesService } from 'src/app/services/movies.service';
   styleUrls: ['./add-movie.component.css'],
 })
 export class AddMovieComponent implements OnInit {
-  @Output() onAddMovie: EventEmitter<Movie> = new EventEmitter();
+  //@Output() onAddMovie: EventEmitter<Movie> = new EventEmitter();
 
   movie!: Movie;
   choice!: number;
@@ -32,10 +32,12 @@ export class AddMovieComponent implements OnInit {
   stars: string = '';
   imgUrl: string = '';
   review: string = '';
+
   constructor(
     public dialogRef: MatDialogRef<AddMovieComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Movie
   ) {}
+
   onNoClick(): void {
     this.dialogRef.close();
   }
