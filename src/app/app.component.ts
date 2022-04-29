@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
 <<<<<<< HEAD
-  //TOMORROW: work on delete inshalah
+  //TOMORROW: update
 =======
 
   delete(movie: any) {
