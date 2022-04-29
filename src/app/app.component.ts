@@ -23,10 +23,6 @@ export class AppComponent implements OnInit {
     }
     this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
-<<<<<<< HEAD
-  //TOMORROW: work on delete inshalah
-=======
-
   delete(movie: any) {
     if (movie) {
       this.moviesService
@@ -36,5 +32,5 @@ export class AppComponent implements OnInit {
         );
     }
   }
->>>>>>> delete
+  //In update branch
 }
