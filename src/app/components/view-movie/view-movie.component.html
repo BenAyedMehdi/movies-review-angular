@@ -27,7 +27,9 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button color="primary">EDIT</button>
+  <button mat-button mat-dialog-close (click)="openDialog()" color="primary">
+    EDIT
+  </button>
   <button
     mat-dialog-close
     [mat-dialog-close]="onDelete(movie)"
