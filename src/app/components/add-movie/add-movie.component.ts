@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Movie } from 'src/app/Movie';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -41,7 +42,9 @@ export class AddMovieComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //this.form.controls['title'].setValue('a');
+  }
 
   getChange(value: any, type: string) {
     const i = this.ratings.indexOf(
