@@ -13,6 +13,7 @@ export class MoviesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
   delete(movie: any) {
     if (movie) {
       this.deleteMovieEvent.emit(movie);

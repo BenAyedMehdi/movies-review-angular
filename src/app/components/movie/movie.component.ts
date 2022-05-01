@@ -22,9 +22,10 @@ export class MovieComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.movieToDelete = result;
-      //console.log('dialog closed ', this.movieToDelete);
-      this.deleteMovieEvent.emit(this.movie);
+      if (result) {
+        this.movieToDelete = result;
+        this.deleteMovieEvent.emit(this.movie);
+      }
     });
   }
 }

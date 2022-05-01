@@ -1,12 +1,4 @@
 {
-  "numbers": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
-    }
-  ],
   "movies": [
     {
       "id": 1,
@@ -23,7 +15,7 @@
         "costumeDesign": 5,
         "editing": 5,
         "music": 4,
-        "visualEffects": 4,
+        "visualEffects": 3,
         "screenplay": 5
       }
     },
@@ -36,7 +28,15 @@
       "writers": "Mario Puzo, Francis Ford Coppola",
       "imgUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "review": "The Godfather follows Vito Corleone, Don of the Corleone family, as he passes the mantel to his unwilling son, Michael.",
-      "ratings": {}
+      "ratings": {
+        "directing": 5,
+        "acting": 4,
+        "costumeDesign": 5,
+        "editing": 5,
+        "music": 4,
+        "visualEffects": 2,
+        "screenplay": 5
+      }
     },
     {
       "id": 3,
@@ -48,7 +48,7 @@
       "imgUrl": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       "review": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
       "ratings": {
-        "directing": 4,
+        "directing": 5,
         "acting": 3,
         "costumeDesign": 3,
         "editing": 5,

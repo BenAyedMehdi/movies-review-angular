@@ -16,8 +16,9 @@ export class ViewMovieComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onNoClick(): void {
+  onNoClick() {
     this.dialogRef.close();
+    return null;
   }
 
   onDelete(movie: Movie) {

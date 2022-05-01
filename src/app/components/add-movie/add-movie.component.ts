@@ -42,6 +42,7 @@ export class AddMovieComponent implements OnInit {
     this.dialogRef.close();
   }
   ngOnInit(): void {}
+
   getChange(value: any, type: string) {
     const i = this.ratings.indexOf(
       this.ratings.filter((e) => e.type === type)[0]
