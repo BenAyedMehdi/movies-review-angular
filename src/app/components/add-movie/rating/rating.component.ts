@@ -7,15 +7,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
   @Input() arr!: (string | number)[];
-  choice: number = 0;
+  //choice: number = this.arr ? Number(this.arr[1]) : 0;
   @Output() newItemEvent = new EventEmitter<number>();
-  constructor() {
-    console.log(this.arr);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
-  radioChange(value: number) {
-    console.log(this.arr);
-    this.newItemEvent.emit(value);
+  radioChange(value: number | string) {
+    this.newItemEvent.emit(Number(value));
   }
 }

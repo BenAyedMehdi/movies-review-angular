@@ -77,18 +77,21 @@ export class AddMovieComponent implements OnInit {
       this.imgUrl = this.data.imgUrl;
       this.review = this.data.review;
       this.testRatings = Object.entries(this.data.ratings);
-      console.log(this.testRatings);
+      this.ratings = this.testRatings.map((r) => {
+        return { type: String(r[0]), value: Number(r[1]) };
+      });
     }
     //this.form.controls['title'].setValue('a');
   }
-  /*
-  getChange(value: any, type: any[]) {
+
+  getChange(value: any, type: string | number) {
     const i = this.ratings.indexOf(
       this.ratings.filter((e) => e.type === type)[0]
     );
     this.ratings[i].value = value;
+    //console.log(this.ratings);
   }
-  */
+
   onSubmit(): Movie {
     //To improve
     const x = this.ratings.map((e) => {
@@ -105,6 +108,7 @@ export class AddMovieComponent implements OnInit {
       review: this.review,
       ratings: y,
     };
+    //console.log('to submit', this.movie);
     return this.movie;
   }
 }

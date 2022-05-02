@@ -29,4 +29,9 @@ export class MoviesService {
     const url = `${this.apiUrl}/${movie.id}`;
     return this.http.delete<Movie>(url);
   }
+  updateMovie(movie: Movie): Observable<Movie> {
+    console.log(movie.id);
+    const url = `${this.apiUrl}/${movie.id}`;
+    return this.http.put<Movie>(url, movie, httpOptions);
+  }
 }

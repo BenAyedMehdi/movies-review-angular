@@ -3,7 +3,7 @@
     <label>{{ arr[0] }}</label>
   </mat-grid-tile>
   <mat-radio-group
-    (change)="radioChange(choice)"
+    (change)="radioChange(arr[1])"
     [(ngModel)]="arr[1]"
     aria-label="rating name"
   >

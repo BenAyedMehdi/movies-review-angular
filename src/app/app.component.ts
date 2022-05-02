@@ -32,5 +32,20 @@ export class AppComponent implements OnInit {
         );
     }
   }
+
+  update(movie: any) {
+    if (movie) {
+      console.log('in app', movie);
+      this.moviesService
+        .updateMovie(movie)
+        .subscribe(
+          () =>
+            (this.movies = [
+              ...this.movies.filter((m) => m.id !== movie.id),
+              movie,
+            ])
+        );
+    }
+  }
   //In update branch
 }

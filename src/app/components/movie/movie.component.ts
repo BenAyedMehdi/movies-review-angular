@@ -11,6 +11,7 @@ import { ViewMovieComponent } from '../view-movie/view-movie.component';
 export class MovieComponent implements OnInit {
   @Input() movie!: Movie;
   @Output() deleteMovieEvent = new EventEmitter<Movie>();
+  @Output() updateMovieEvent = new EventEmitter<Movie>();
   movieToDelete!: Movie;
   constructor(public dialog: MatDialog) {}
 
@@ -23,9 +24,14 @@ export class MovieComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log('result in movie: ', result);
-        this.movieToDelete = result;
-        this.deleteMovieEvent.emit(this.movie);
+        if (result.action == 'delete') {
+          this.movieToDelete = result;
+          this.deleteMovieEvent.emit(this.movie);
+        }
+        if (result.action == 'update') {
+          //console.log('result in movie: ', result);
+          this.updateMovieEvent.emit(result.data);
+        }
       }
     });
   }

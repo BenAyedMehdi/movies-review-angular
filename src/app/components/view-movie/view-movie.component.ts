@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import {
   MatDialog,
   MatDialogRef,
@@ -14,6 +14,8 @@ import { MovieComponent } from '../movie/movie.component';
   styleUrls: ['./view-movie.component.css'],
 })
 export class ViewMovieComponent implements OnInit {
+  movieToUpdate!: Movie;
+
   constructor(
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<MovieComponent>,
@@ -28,7 +30,7 @@ export class ViewMovieComponent implements OnInit {
   }
 
   onDelete(movie: Movie) {
-    return movie;
+    return { action: 'delete', data: movie };
   }
 
   openDialog() {
@@ -37,14 +39,17 @@ export class ViewMovieComponent implements OnInit {
       width: '80%',
       data: this.movie,
     });
-    /*
+
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        console.log('result in movie: ', result);
-        this.movieToDelete = result;
-        this.deleteMovieEvent.emit(this.movie);
+        //console.log('result in view movie: ', result);
+        //this.movieToUpdate = result;
+
+        //this.updateMovieEvent.emit(result);
+        this.dialogRef.close({ action: 'update', data: result });
+        //return result;
       }
-    });*/
+    });
   }
 
   rates = Object.keys(this.movie.ratings).map((key) => {

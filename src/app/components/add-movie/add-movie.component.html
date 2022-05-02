@@ -78,7 +78,10 @@
     </mat-form-field>
     <h3>Ratings</h3>
     <div *ngFor="let rating of testRatings">
-      <app-rating [arr]="rating"></app-rating>
+      <app-rating
+        [arr]="rating"
+        (newItemEvent)="getChange($event, rating[0])"
+      ></app-rating>
     </div>
   </form>
 </mat-dialog-content>
