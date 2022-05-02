@@ -23,9 +23,21 @@ export class AddMovieComponent implements OnInit {
     'visualEffects',
     'screenplay',
   ];
+
   ratings = this.ratingTypes.map((type) => {
     return { type: type, value: 0 };
   });
+
+  testRatings = [
+    ['directing', 1],
+    ['acting', 1],
+    ['costumeDesign', 1],
+    ['editing', 1],
+    ['music', 1],
+    ['visualEffects', 1],
+    ['screenplay', 1],
+  ];
+
   title: string = '';
   director: string = '';
   writers: string = '';
@@ -38,6 +50,7 @@ export class AddMovieComponent implements OnInit {
     public dialogRef: MatDialogRef<AddMovieComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Movie
   ) {
+    /*
     if (data) {
       this.title = data.name;
       this.director = data.director;
@@ -46,22 +59,36 @@ export class AddMovieComponent implements OnInit {
       this.stars = data.stars;
       this.imgUrl = data.imgUrl;
       this.review = data.review;
-    }
+      this.testRatings = Object.entries(data.ratings);
+      console.log(this.testRatings);
+    }*/
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
   ngOnInit(): void {
+    if (this.data) {
+      this.title = this.data.name;
+      this.director = this.data.director;
+      this.writers = this.data.writers;
+      this.year = this.data.year;
+      this.stars = this.data.stars;
+      this.imgUrl = this.data.imgUrl;
+      this.review = this.data.review;
+      this.testRatings = Object.entries(this.data.ratings);
+      console.log(this.testRatings);
+    }
     //this.form.controls['title'].setValue('a');
   }
-
-  getChange(value: any, type: string) {
+  /*
+  getChange(value: any, type: any[]) {
     const i = this.ratings.indexOf(
       this.ratings.filter((e) => e.type === type)[0]
     );
     this.ratings[i].value = value;
   }
+  */
   onSubmit(): Movie {
     //To improve
     const x = this.ratings.map((e) => {

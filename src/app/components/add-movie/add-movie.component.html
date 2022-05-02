@@ -77,11 +77,8 @@
       />
     </mat-form-field>
     <h3>Ratings</h3>
-    <div *ngFor="let type of ratingTypes">
-      <app-rating
-        (newItemEvent)="getChange($event, type)"
-        [name]="type"
-      ></app-rating>
+    <div *ngFor="let rating of testRatings">
+      <app-rating [arr]="rating"></app-rating>
     </div>
   </form>
 </mat-dialog-content>
@@ -99,3 +96,5 @@
   </button>
   <button mat-button mat-dialog-close color="primary">CLOSE</button>
 </mat-dialog-actions>
+
+<!--(newItemEvent)="getChange($event, rating[1])"--->
