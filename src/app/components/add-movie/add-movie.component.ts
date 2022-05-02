@@ -37,7 +37,17 @@ export class AddMovieComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AddMovieComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Movie
-  ) {}
+  ) {
+    if (data) {
+      this.title = data.name;
+      this.director = data.director;
+      this.writers = data.writers;
+      this.year = data.year;
+      this.stars = data.stars;
+      this.imgUrl = data.imgUrl;
+      this.review = data.review;
+    }
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
