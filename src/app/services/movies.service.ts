@@ -22,6 +22,7 @@ export class MoviesService {
   }
 
   addMovie(movie: Movie): Observable<Movie> {
+    console.log(movie);
     return this.http.post<Movie>(this.apiUrl, movie, httpOptions);
   }
 
@@ -30,7 +31,6 @@ export class MoviesService {
     return this.http.delete<Movie>(url);
   }
   updateMovie(movie: Movie): Observable<Movie> {
-    console.log(movie.id);
     const url = `${this.apiUrl}/${movie.id}`;
     return this.http.put<Movie>(url, movie, httpOptions);
   }

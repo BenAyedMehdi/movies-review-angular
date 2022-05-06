@@ -38,6 +38,7 @@ export class AddMovieComponent implements OnInit {
     ['screenplay', 1],
   ];
 
+  id: number = 0;
   title: string = '';
   director: string = '';
   writers: string = '';
@@ -69,6 +70,7 @@ export class AddMovieComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this.data) {
+      this.id = this.data.id;
       this.title = this.data.name;
       this.director = this.data.director;
       this.writers = this.data.writers;
@@ -99,6 +101,7 @@ export class AddMovieComponent implements OnInit {
     });
     const y = Object.assign({}, ...x);
     this.movie = {
+      id: this.id,
       name: this.title,
       year: this.year,
       director: this.director,
