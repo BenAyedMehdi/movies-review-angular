@@ -29,13 +29,13 @@ export class AddMovieComponent implements OnInit {
   });
 
   testRatings = [
-    ['directing', 1],
-    ['acting', 1],
-    ['costumeDesign', 1],
-    ['editing', 1],
-    ['music', 1],
-    ['visualEffects', 1],
-    ['screenplay', 1],
+    ['directing', 0],
+    ['acting', 0],
+    ['costumeDesign', 0],
+    ['editing', 0],
+    ['music', 0],
+    ['visualEffects', 0],
+    ['screenplay', 0],
   ];
 
   id: number = 0;
