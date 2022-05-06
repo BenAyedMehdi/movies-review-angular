@@ -23,13 +23,7 @@ export class AppComponent implements OnInit {
     }
     this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-  //TOMORROW: update
-=======
 
-=======
->>>>>>> update
   delete(movie: any) {
     if (movie) {
       this.moviesService
