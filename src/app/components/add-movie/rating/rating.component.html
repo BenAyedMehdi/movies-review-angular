@@ -1,0 +1,14 @@
+<mat-grid-list cols="6" rowHeight="30px">
+  <mat-grid-tile>
+    <label>{{ arr[0] }}</label>
+  </mat-grid-tile>
+  <mat-radio-group
+    (change)="radioChange(arr[1])"
+    [(ngModel)]="arr[1]"
+    aria-label="rating name"
+  >
+    <mat-grid-tile *ngFor="let i of [1, 2, 3, 4, 5]">
+      <mat-radio-button [value]="i">{{ i }}</mat-radio-button>
+    </mat-grid-tile>
+  </mat-radio-group>
+</mat-grid-list>

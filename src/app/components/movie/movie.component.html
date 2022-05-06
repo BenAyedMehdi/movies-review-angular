@@ -1,0 +1,14 @@
+<div class="card">
+  <mat-card (click)="openDialog()" class="mat-elevation-z4">
+    <mat-card-header>
+      <mat-card-title>{{ movie.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ movie.imgUrl }}" />
+    <mat-card-content>
+      <p>{{ movie.year }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <!---<button mat-button color="primary" (click)="openDialog()">VIEW</button>-->
+    </mat-card-actions>
+  </mat-card>
+</div>
