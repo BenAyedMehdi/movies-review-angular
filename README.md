@@ -1,27 +1,27 @@
-# AngularMovies
+# About the project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+This solution was created using TypeScript and Angular.
+The module "json-server" allowed me to store the database locally and create endpoints to manipulate the data.
 
-## Development server
+![Alt text](./screenshot.png?raw=true "Optional Title")
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Modules used
 
-## Code scaffolding
+In this project , I used the following module :
+- __bootstrap__
+- __angular material__
+- __json-server__
+- __concurrently__
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Instractions to start the program
 
-## Build
+### git clone https://github.com/BenAyedMehdi/angular-movies
+- Clone the gitHub repository
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### npm install
+- Install all dependancies using this command
 
-## Running unit tests
+### npm run server
+- Use this command to run json-server on port 5000 and run the app locally on port 4200 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
