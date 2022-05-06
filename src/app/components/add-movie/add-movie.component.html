@@ -1,7 +1,7 @@
 <title mat-dialog-title>Add movie</title>
 
 <mat-dialog-content width="100%">
-  <form>
+  <form id="form" name="form">
     <mat-grid-list cols="2" rowHeight="200px">
       <mat-grid-tile>
         <div class="controls-container">
@@ -77,10 +77,10 @@
       />
     </mat-form-field>
     <h3>Ratings</h3>
-    <div *ngFor="let type of ratingTypes">
+    <div *ngFor="let rating of testRatings">
       <app-rating
-        (newItemEvent)="getChange($event, type)"
-        [name]="type"
+        [arr]="rating"
+        (newItemEvent)="getChange($event, rating[0])"
       ></app-rating>
     </div>
   </form>
@@ -99,3 +99,5 @@
   </button>
   <button mat-button mat-dialog-close color="primary">CLOSE</button>
 </mat-dialog-actions>
+
+<!--(newItemEvent)="getChange($event, rating[1])"--->

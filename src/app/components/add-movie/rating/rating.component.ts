@@ -6,13 +6,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./rating.component.css'],
 })
 export class RatingComponent implements OnInit {
-  choice: number = 0;
-  @Input() name!: string;
+  @Input() arr!: (string | number)[];
+  //choice: number = this.arr ? Number(this.arr[1]) : 0;
   @Output() newItemEvent = new EventEmitter<number>();
   constructor() {}
 
   ngOnInit(): void {}
-  radioChange(value: number) {
-    this.newItemEvent.emit(value);
+  radioChange(value: number | string) {
+    this.newItemEvent.emit(Number(value));
   }
 }

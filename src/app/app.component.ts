@@ -24,9 +24,12 @@ export class AppComponent implements OnInit {
     this.moviesService.getMovies().subscribe((m) => (this.movies = m));
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   //TOMORROW: update
 =======
 
+=======
+>>>>>>> update
   delete(movie: any) {
     if (movie) {
       this.moviesService
@@ -36,5 +39,20 @@ export class AppComponent implements OnInit {
         );
     }
   }
->>>>>>> delete
+
+  update(movie: any) {
+    if (movie) {
+      //console.log('in app', movie);
+      this.moviesService
+        .updateMovie(movie)
+        .subscribe(
+          () =>
+            (this.movies = [
+              ...this.movies.filter((m) => m.id !== movie.id),
+              movie,
+            ])
+        );
+    }
+  }
+  //In update branch
 }

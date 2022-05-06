@@ -1,2 +1,6 @@
 <app-header (newMovieEvent)="getNew($event)"></app-header>
-<app-movies (deleteMovieEvent)="delete($event)" [movies]="movies"></app-movies>
+<app-movies
+  (deleteMovieEvent)="delete($event)"
+  (updateMovieEvent)="update($event)"
+  [movies]="movies"
+></app-movies>

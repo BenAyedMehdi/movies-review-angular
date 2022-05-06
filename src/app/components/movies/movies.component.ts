@@ -8,14 +8,22 @@ import { Movie } from 'src/app/Movie';
 })
 export class MoviesComponent implements OnInit {
   @Output() deleteMovieEvent = new EventEmitter<Movie>();
+  @Output() updateMovieEvent = new EventEmitter<Movie>();
   @Input() movies!: Movie[];
   gridColumns = 4;
   constructor() {}
 
   ngOnInit(): void {}
+
   delete(movie: any) {
     if (movie) {
       this.deleteMovieEvent.emit(movie);
+    }
+  }
+  update(movie: any) {
+    if (movie) {
+      //console.log('in movies', movie);
+      this.updateMovieEvent.emit(movie);
     }
   }
 }
