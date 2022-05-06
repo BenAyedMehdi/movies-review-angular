@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
 
   update(movie: any) {
     if (movie) {
-      //console.log('in app', movie);
       this.moviesService
         .updateMovie(movie)
         .subscribe(
@@ -48,5 +47,5 @@ export class AppComponent implements OnInit {
         );
     }
   }
-  //In update branch
+  //This is the Beta version
 }
