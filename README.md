@@ -3,7 +3,7 @@
 This solution was created using TypeScript and Angular.
 The module "json-server" allowed me to store the database locally and create endpoints to manipulate the data.
 
-![Alt text](./screenshot.png?raw=true "Optional Title")
+![Alt text](./screenshot.gif?raw=true "Optional Title")
 
 ## Modules used
 
